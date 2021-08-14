@@ -15,6 +15,7 @@
       </div>
 
 
+
     </div>
 
 
@@ -28,7 +29,7 @@
   export default {
     data () {
       return {
-      
+        mountain_name : ''
       }
     },
     methods: {
@@ -43,7 +44,6 @@
 <style>
   .form_base {
     border-radius: 2%;
-    background-color: whitesmoke;
     color: black;
     padding: 2rem;
   }
