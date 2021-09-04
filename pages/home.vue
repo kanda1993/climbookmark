@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{ $config.HOGE }}
     <v-card
       class="mx-auto"
       max-width="500"

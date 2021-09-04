@@ -26,6 +26,8 @@
 </template>
 
 <script>
+  import firebase from '@/plugins/firebase'
+
   export default {
     data () {
       return {
@@ -34,7 +36,13 @@
     },
     methods: {
       add (){
-        alert("登録完了（嘘です。まだ未実装です）");
+        let data = {
+          name     : this. mountain_name
+        }
+
+        firebase.db.collection('mountains').doc("99").set(data);
+
+        alert("登録完了！！");
       }
     }
   }
