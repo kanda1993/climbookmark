@@ -93,3 +93,4 @@ sw.*
 # firebase  deployを高速化するためのファイル
 .firebase
 
+/docker/
