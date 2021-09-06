@@ -21,5 +21,5 @@ RUN npm install -g npm firebase-tools && apt-get update && apt-get install -y vi
 # ディレクトリを移動する
 WORKDIR /app
 
-# ポート3000番を開放する
-EXPOSE 3000
+# ポート3000番:node, 9000:firebase
+EXPOSE 3000 9005
