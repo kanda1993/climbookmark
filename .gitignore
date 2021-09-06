@@ -93,5 +93,3 @@ sw.*
 # firebase  deployを高速化するためのファイル
 .firebase
 
-# Dockerfileは基本的に変更しない(環境変数入れるので変更しない)
-docker/
