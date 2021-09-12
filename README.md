@@ -11,8 +11,8 @@ Firebaseのサイト(アプリ→setting→SDKの構成)から取得する
 ```
 ENV FIREBASE_apiKey=
 ENV FIREBASE_authDomain=
-ENV FIREBASE_databaseURL=
-#ENV FIREBASE_projectId=https://projectId.firebaseio.com
+ENV FIREBASE_databaseURL=https://projectId.firebaseio.com
+#ENV FIREBASE_projectId=
 ENV FIREBASE_storageBucket=
 ENV FIREBASE_messagingSenderId=
 ENV FIREBASE_appId=
