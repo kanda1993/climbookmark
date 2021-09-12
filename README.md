@@ -7,16 +7,19 @@
 edit Docker file
 
 # Firebaseアプリ用
-# Firebaseのサイト(アプリ→setting→SDKの構成)から取得する
+Firebaseのサイト(アプリ→setting→SDKの構成)から取得する  
 ```
 ENV FIREBASE_apiKey=
 ENV FIREBASE_authDomain=
 ENV FIREBASE_databaseURL=
-#ENV FIREBASE_projectId=
+#ENV FIREBASE_projectId=https://projectId.firebaseio.com
 ENV FIREBASE_storageBucket=
 ENV FIREBASE_messagingSenderId=
 ENV FIREBASE_appId=
 ```
+
+Firebaseにも上記の環境変数を設定する
+
 
 
 ## Build Setup
@@ -36,4 +39,4 @@ $ yarn start
 $ yarn generate
 ```
 
-# server env 
+
