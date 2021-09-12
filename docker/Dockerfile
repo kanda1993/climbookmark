@@ -7,13 +7,13 @@ ENV NODE_ENV=development
 
 # Firebaseアプリ用
 # Firebaseのサイトから取得する
-ENV FIREBASE_apiKey=
-ENV FIREBASE_authDomain=
-ENV FIREBASE_databaseURL=
+ENV firebase.api_key=AIzaSyD1rV5GJDnAprRc_3X-SMf49gDTFa-OlF4
+ENV firebase.auth_domain=climbookmark.firebaseapp.com
+ENV firebase.database_url=https://climbookmark.firebaseio.com
 #ENV FIREBASE_projectId=
-ENV FIREBASE_storageBucket=
-ENV FIREBASE_messagingSenderId=
-ENV FIREBASE_appId=
+ENV firebase.storage_bucket=climbookmark.appspot.com
+ENV firebase.messaging_sender_id=1096755414982
+ENV firebase.app_id=1:1096755414982:web:9ebf33c4e614a5cf38d4c7
 
 # 雛形を生成するのに必要なパッケージのインストール
 RUN npm install -g npm firebase-tools && apt-get update && apt-get install -y vim

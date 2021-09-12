@@ -2,13 +2,13 @@ import firebase from 'firebase'
 
 if (!firebase.apps.length) {
   firebase.initializeApp({
-    apiKey: process.env.FIREBASE_apiKey,
-    authDomain: process.env.FIREBASE_authDomain,
-    databaseURL: process.env.FIREBASE_databaseURL,
+    apiKey: process.env.firebase.api_key,
+    authDomain: firebase.auth_domain,
+    databaseURL: process.env.firebase.database_url,
     projectId: 'climbookmark',
-    storageBucket: process.env.FIREBASE_storageBucket,
-    messagingSenderId: process.env.FIREBASE_messagingSenderId,
-    appId: process.env.FIREBASE_appId
+    storageBucket: process.env.firebase.storage_bucket,
+    messagingSenderId: process.env.firebase.messaging_sender_id,
+    appId: process.env.firebase.app_id
   })
 
 }
