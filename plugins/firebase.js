@@ -3,7 +3,7 @@ import firebase from 'firebase'
 if (!firebase.apps.length) {
   firebase.initializeApp({
     apiKey: process.env.firebase_api_key,
-    authDomain: firebase_auth_domain,
+    authDomain: process.env.firebase_auth_domain,
     databaseURL: process.env.firebase_database_url,
     projectId: 'climbookmark',
     storageBucket: process.env.firebase_storage_bucket,
