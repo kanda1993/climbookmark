@@ -8,19 +8,25 @@
       <v-container fluid>
         <v-row dense>
           <v-col
-            v-for="card in cards"
-            :key="card.title"
-            :cols="card.flex"
+            v-for="mountains in mountains"
+            :key="mountains.id"
+            :cols="6"
           >
             <v-card>
-              <v-img
-                :src="card.src"
-                class="white--text align-end"
-                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                height="200px"
-              >
-                <v-card-title v-text="card.title"></v-card-title>
-              </v-img>
+
+                <v-card-title>
+                  <ruby>
+                    {{ mountains.name }}
+                    <rt> {{ mountains.name_ruby }} </rt>
+                  </ruby>
+                </v-card-title>
+                
+                <div>
+                  <span>標高 {{ mountains.elevation }}m</span>
+                </div>
+                <div>
+                  <span>XX県</span>
+                </div>
 
               <v-card-actions>
                 <v-spacer></v-spacer>
@@ -48,13 +54,27 @@
 </template>
 
 <script>
+  import firebase from '@/plugins/firebase'
+
   export default {
     data: () => ({
-      cards: [
-        { title: '富士山', src: '', flex: 6 },
-        { title: '高尾山', src: '', flex: 6 },
-        { title: '三つ峠', src: '', flex: 6 },
-      ],
+      mountains: [],
     }),
+    methods: {
+      getMontains : async function(){
+        //
+        let temp = await firebase.db.collection('mountains').get()
+
+        temp.forEach(doc => {
+          //データ部分を取得
+          let temp = doc.data();
+          
+          this.mountains.push(temp);
+        });
+      }
+    },
+    created : function() {
+      this.getMontains();
+    }
   }
 </script>
