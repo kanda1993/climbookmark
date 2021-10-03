@@ -18,26 +18,27 @@
         </div>
 
         <ul>
-          <span v-if="mountain_addresses.length">
-            <li v-for="mountain in mountain_addresses" :key="mountain.add">
-              住所：<input v-model="mountain.add" >
+          
+            <li v-for="(mountain, index) in mountain_addresses" :key="mountain[index]">
+              住所：<input v-model="mountain_addresses[index]" >
 
-              <v-btn
-                icon
-                color="blue"
-                @click="address_add"
-              >
-                <v-icon>mdi-timeline-plus-outline</v-icon>
-              </v-btn>
-              <v-btn
-                icon
-                color="red"
-              >
-                <v-icon>mdi-timeline-minus-outline</v-icon>
-              </v-btn>
+            <v-btn
+              icon
+              color="red"
+              @click="address_remove(index)"
+            >
+              <v-icon>mdi-timeline-minus-outline</v-icon>
+            </v-btn>
+          </li>
 
-            </li>
-          </span>
+          <v-btn
+            icon
+            color="blue"
+            @click="address_add"
+          >
+            <v-icon>mdi-timeline-plus-outline</v-icon>
+          </v-btn>
+         
         </ul>
 
         <v-btn
@@ -45,9 +46,6 @@
           elevation="2"
         >登録</v-btn>
       </div>
-
-
-
     </div>
 
 
@@ -63,11 +61,11 @@
   export default {
     data () {
       return {
-        mountain_id : '',
+        mountain_id : Math.random().toString(36).slice(-8),
         mountain_name : '',
         mountain_ruby : '',
         mountain_elevation: '',
-        mountain_addresses: [ {add : ""}]
+        mountain_addresses: ['']
       }
     },
     methods: {
@@ -76,7 +74,8 @@
           id       : this.mountain_id,
           name     : this. mountain_name,
           name_ruby : this.mountain_name_ruby,
-          elevation : this.mountain_elevation
+          elevation : this.mountain_elevation,
+          address : this.mountain_addresses
         }
 
         firebase.db.collection('mountains').doc(data.id).set(data);
@@ -84,8 +83,10 @@
         alert("登録完了！！");
       },
       address_add () {
-        this.mountain_addresses.push("test");
-        alert("test")
+        this.mountain_addresses.push("");
+      },
+      address_remove(index) {
+        this.mountain_addresses.splice(index,1);
       }
 
     }

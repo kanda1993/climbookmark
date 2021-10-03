@@ -24,9 +24,9 @@
                 <div>
                   <span>標高 {{ mountains.elevation }}m</span>
                 </div>
-                <div>
-                  <span>XX県</span>
-                </div>
+                <span v-for="(address, index) in mountains.address" :key="address[index]">
+                  {{ address }}、
+                </span>
 
               <v-card-actions>
                 <v-spacer></v-spacer>
