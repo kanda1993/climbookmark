@@ -13,7 +13,7 @@
             :cols="6"
           >
             <v-card>
-
+              <nuxt-link to="mountain/main">
                 <v-card-title>
                   <ruby>
                     {{ mountains.name }}
@@ -28,6 +28,7 @@
                   {{ address }}、
                 </span>
 
+              </nuxt-link>
               <v-card-actions>
                 <v-spacer></v-spacer>
 
